@@ -45,9 +45,7 @@ function getFeedHtml(){
     let feedHtml = ``;
 
     tweetsData.forEach(function(tweet){
-
         let likeIconClass = ''
-        
         if (tweet.isLiked){
             likeIconClass = 'liked'
         }
@@ -57,6 +55,9 @@ function getFeedHtml(){
             retweetIconClass = 'retweeted'
         }
 
+        if (tweet.replies.length > 0){
+            console.log(tweet.uuid)
+        }
         feedHtml += `
 <div class="tweet">
      <div class="tweet-inner">
